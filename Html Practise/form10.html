@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChaiCode Registration</title>
+  </head>
+  <body>
+    <h1>ChaiCode Course Registration</h1>
+    <!-- Create a comprehensive registration form -->
+
+    <h1>ChaiCode Course Registration Form</h1>
+
+    <!-- 9. Action and Method -->
+    <form action="/register" method="post" enctype="multipart/form-data">
+
+      <!-- PERSONAL DETAILS -->
+      <fieldset>
+        <legend>Personal Details</legend>
+
+        <label for="fullname">Full Name:</label><br>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="Enter your full name"
+          pattern="[A-Za-z ]+"
+          title="Only letters and spaces allowed"
+          maxlength="30"
+          required
+        >
+        <br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@email.com"
+          required
+        >
+        <br><br>
+
+        <label for="age">Age:</label><br>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          min="16"
+          max="60"
+          required
+        >
+      </fieldset>
+
+      <br>
+
+      <!-- COURSE PREFERENCES -->
+      <fieldset>
+        <legend>Course Preferences</legend>
+
+        <!-- 3. Radio Buttons -->
+        <p>Preferred Learning Mode:</p>
+        <input type="radio" id="online" name="mode" value="online" required>
+        <label for="online">Online</label><br>
+
+        <input type="radio" id="offline" name="mode" value="offline">
+        <label for="offline">Offline</label><br>
+
+        <input type="radio" id="hybrid" name="mode" value="hybrid">
+        <label for="hybrid">Hybrid</label>
+        <br><br>
+
+        <!-- 4. Checkboxes -->
+        <p>Courses Interested In:</p>
+        <input type="checkbox" id="html" name="courses" value="html">
+        <label for="html">HTML & CSS</label><br>
+
+        <input type="checkbox" id="js" name="courses" value="javascript">
+        <label for="js">JavaScript</label><br>
+
+        <input type="checkbox" id="react" name="courses" value="react">
+        <label for="react">React</label><br>
+
+        <input type="checkbox" id="node" name="courses" value="node">
+        <label for="node">Node.js</label>
+      </fieldset>
+
+      <br>
+
+      <!-- EXPERIENCE & SKILLS -->
+      <fieldset>
+        <legend>Experience & Skills</legend>
+
+        <!-- 4. Select Dropdown -->
+        <label for="experience">Experience Level:</label><br>
+        <select id="experience" name="experience" required>
+          <option value="">-- Select Level --</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+        <br><br>
+
+        <!-- 8. Datalist -->
+        <label for="skill">Primary Skill:</label><br>
+        <input
+          type="text"
+          id="skill"
+          name="skill"
+          list="skills"
+          placeholder="Start typing..."
+        >
+
+        <datalist id="skills">
+          <option value="HTML">
+          <option value="CSS">
+          <option value="JavaScript">
+          <option value="React">
+          <option value="Node.js">
+        </datalist>
+      </fieldset>
+
+      <br>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <fieldset>
+        <legend>Additional Information</legend>
+
+        <!-- 5. Textarea -->
+        <label for="message">Why do you want to join ChaiCode?</label><br>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          cols="40"
+          placeholder="Tell us about your goals..."
+          required
+        ></textarea>
+      </fieldset>
+
+      <br>
+
+      <!-- FILE UPLOAD -->
+      <fieldset>
+        <legend>Upload Documents</legend>
+
+        <!-- 7. File Upload -->
+        <label for="resume">Upload Resume (PDF only):</label><br>
+        <input
+          type="file"
+          id="resume"
+          name="resume"
+          accept=".pdf,application/pdf"
+          required
+        >
+      </fieldset>
+
+      <br>
+
+      <!-- SUBMIT / RESET -->
+      <button type="submit">Register</button>
+      <button type="reset">Reset Form</button>
+
+    </form>
+  </body>
+</html>

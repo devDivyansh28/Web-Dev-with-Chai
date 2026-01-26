@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <picture>
+  <!-- Large screens -->
+  <source 
+    srcset="images/hero-large.jpg" 
+    media="(min-width: 1024px)">
+
+  <!-- Tablets -->
+  <source 
+    srcset="images/hero-medium.jpg" 
+    media="(min-width: 600px)">
+
+  <!-- Mobile fallback -->
+  <img 
+    src="images/hero-small.jpg" 
+    alt="Mountain landscape at sunrise"
+    style="width: 100%; height: auto;">
+</picture>
+
+</body>
+</html>

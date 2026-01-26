@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Submission</title>
+  </head>
+  <body>
+    <h1>Newsletter Signup</h1>
+    <!-- Create form with action and method -->
+       <form action="/login" method="post">
+      
+      <label for="username">Username:</label><br>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+      >
+      <br><br>
+
+      <label for="password">Password:</label><br>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+      >
+      <br><br>
+
+      <!-- Submit and Reset buttons -->
+      <button type="submit">Login</button>
+      <button type="reset">Clear</button>
+
+    </form>
+  </body>
+</html>

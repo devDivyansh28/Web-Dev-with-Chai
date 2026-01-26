@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <h1>Account Setup</h1>
+    <!-- Create a form with validation attributes -->
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <h1>Account Setup</h1>
+    <!-- Create a form with validation attributes -->
+     <form>
+      <fieldset>
+        <legend>Validation Form</legend>
+
+        <!-- Name with pattern + maxlength -->
+        <label for="name">Enter your Name:</label><br>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Only letters allowed"
+          pattern="[A-Za-z ]+"
+          maxlength="20"
+          title="Name should contain only letters and spaces"
+          required
+        >
+        <br><br>
+
+        <!-- Age with min and max -->
+        <label for="age">Enter your Age:</label><br>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          placeholder="Age between 18 and 60"
+          min="18"
+          max="60"
+          required
+        >
+        <br><br>
+
+        <!-- Website URL -->
+        <label for="website">Your Website:</label><br>
+        <input
+          type="url"
+          id="website"
+          name="website"
+          placeholder="https://example.com"
+          required
+        >
+        <br><br>
+
+        <button type="submit">Create Account</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
+  </body>
+</html>

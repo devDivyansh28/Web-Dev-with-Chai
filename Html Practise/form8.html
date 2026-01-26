@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Autocomplete</title>
+  </head>
+  <body>
+    <h1>Course Search</h1>
+    <!-- Create input with datalist -->
+    
+    <form>
+      <label for="skill">Choose your skill:</label><br><br>
+
+      <!-- 3 & 4: link input to datalist -->
+      <input
+        type="text"
+        id="skill"
+        name="skill"
+        list="skills"
+        placeholder="Start typing..."
+      >
+
+      <!-- 1: datalist with unique id -->
+      <datalist id="skills">
+        <!-- 2: options for suggestions -->
+        <option value="HTML">
+        <option value="CSS">
+        <option value="JavaScript">
+        <option value="React">
+        <option value="Node.js">
+      </datalist>
+
+      <br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

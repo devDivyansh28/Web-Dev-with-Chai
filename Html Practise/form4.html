@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+  <!-- Radio Buttons -->
+  <fieldset>
+    <legend>Preferred Learning Mode</legend>
+
+    <input type="radio" id="online" name="learning_mode" value="online">
+    <label for="online">Online</label><br>
+
+    <input type="radio" id="offline" name="learning_mode" value="offline">
+    <label for="offline">Offline</label><br>
+
+    <input type="radio" id="hybrid" name="learning_mode" value="hybrid">
+    <label for="hybrid">Hybrid</label>
+  </fieldset>
+
+  <br>
+
+  <!-- Checkboxes -->
+  <fieldset>
+    <legend>Skills You Want to Learn</legend>
+
+    <input type="checkbox" id="html" name="skills" value="html">
+    <label for="html">HTML</label><br>
+
+    <input type="checkbox" id="css" name="skills" value="css">
+    <label for="css">CSS</label><br>
+
+    <input type="checkbox" id="javascript" name="skills" value="javascript">
+    <label for="javascript">JavaScript</label><br>
+
+    <input type="checkbox" id="node" name="skills" value="node">
+    <label for="node">Node.js</label>
+  </fieldset>
+
+  <br>
+
+  <!-- Select Dropdown -->
+  <fieldset>
+    <legend>Experience Level</legend>
+
+    <label for="experience">Choose your level:</label><br>
+    <select id="experience" name="experience">
+      <option value="">-- Select Level --</option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+  </fieldset>
+
+  <br>
+
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
