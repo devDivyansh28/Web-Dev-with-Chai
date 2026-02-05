@@ -32,10 +32,9 @@ header nav{
     align-items: center;
     font-size: 20px;
     font-family: "Cursor Regular";
-    margin-left: 110px;
     position: fixed;
     background-color: var(--background-color);
-    width: 85%;
+    width: 100%;
     top:0;
 }
 
@@ -43,10 +42,13 @@ header nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .navstart span{
     margin-top:5px;
+    margin-left: 110px;
+    
 }
 
 
@@ -62,6 +64,8 @@ header nav{
 .navmid a{
     color: var(--font-color);
     text-decoration: none;
+    font-weight: 100;
+  
     
     
 }
@@ -73,10 +77,11 @@ header nav{
     gap: 20px;
     font-family: "Cursor Regular";
     font-size: 15px;
+    margin-right: 120px;
 }
 
 .signinbutton{
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'cursorgothic';
     box-shadow: none;
     background-color: var(--background-color);
@@ -85,7 +90,7 @@ header nav{
     border-style: solid;
     padding: 5px 10px;
     border-radius: 20px;
-    border-color: white;
+    border-color: grey;
     font-weight: 50;
     font-family: 'MyFont';
 }
@@ -204,6 +209,7 @@ header nav{
 .p1 {
     font-size: 22px;
     color: #EDECEC;
+    font-weight: 100;
 }
 
 .p2 {
@@ -426,7 +432,141 @@ header nav{
 }
 
 
+.section5{
+    margin-left: 110px;
+    margin-right: 120px;
+    background-color: #1B1913;
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    margin-top: 150px;
+    border-radius: 8px;
+}
 
+.section5img img{
+    width: 840px;
+    height: 473px;
+    border-radius: 8px;
+}
+
+.section5text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.section6{
+    
+    background-color: #1b1913;
+    margin-top: 150px;
+    padding: 10px;
+    display: flex;
+    gap: 250px;
+}
+
+.section6cards{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    gap:15px;
+    margin-top: 15px;
+}
+
+.section6card{
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #201E18;
+}
+
+.section6card .p1 , .p2 {
+    font-size: 16px;
+}
+
+
+.section6p{
+    margin-left: 100px;
+    margin-top:100px;
+}
+
+.section6 .p3{
+    padding-bottom : 80px;
+
+}
+
+.section7{
+    
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    gap: 40px;
+}
+
+.section7 h2{
+    font-size: 70px;
+    font-weight: 100;
+}
+
+
+footer{
+    background-color: #1B1913;
+    position: static;
+    bottom: 0;
+    padding-top: 50px;
+    
+}
+
+
+.itemsgrid{
+
+
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin: 50px 110px;
+    
+}
+
+.itemsgrid ul {
+    margin-top: 10px;
+    font-weight: 100;
+}
+
+.footeritems{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 110px;
+    margin-right: 120px;
+}
+
+.utility img{
+    width: 228px;
+    height: 38px;
+}
+
+ul .p2 {
+    margin-bottom: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 50px;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+ul li {
+    font-weight: 100;
+}
 
 
 
