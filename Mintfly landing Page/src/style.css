@@ -88,7 +88,7 @@ nav{
 
 
 .griditem{
-    border: 2px dashed red;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,24 +172,38 @@ nav{
 }
 
 .company {
-    border: 2px solid white;
+    
+    padding-top :400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.companygridbox{
-    border: 2px dashed red;
-    margin-top: 450px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 10px;
-    padding: 100px;
-    margin-left: 120px;
-    margin-right: 120px;
-}
 
-.company1{
-    border: 2px solid red;
+.section4{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
     
 }
+
+.sectext2 p{
+    color: oklab(0.943853 0.00107113 0.000336707 / 0.6 );
+}
+
+
+.video1{
+    margin-top: 50px;
+}
+
+.aninmation2{
+    
+}
+
+
 
 
 
