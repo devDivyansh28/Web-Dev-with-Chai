@@ -59,11 +59,12 @@ https://devdivyanshmintlifyclone.vercel.app/
 
 This repository also includes a **monorepo** containing:
 
+🔗 Link :
+https://github.com/devDivyansh28/Web-Dev-with-Chai/tree/main/Github%20Assignment
+
 ✅ GitHub Lab Assignments  
 ✅ Practice Exercises  
 ✅ Learning Experiments  
-
-The monorepo helps me keep all coursework, experiments, and exercises organized in one place.
 
 ---
 
@@ -97,11 +98,16 @@ Stay tuned as I continue building and learning! ✨
 
 ## 🤝 Connect With Me
 
-If you'd like to share feedback or connect:
+I regularly share my learning, projects, and insights on:
 
-💼 GitHub: *[your GitHub link]*  
-🌐 Portfolio (coming soon...)
+🐦 **X (Twitter)** – Development updates & content  
+🔗 https://x.com/devDivyansh_28
 
+💼 **LinkedIn** – Professional journey & networking  
+🔗 https://linkedin.com/in/devdivyansh28
+
+✍️ **Hashnode** – Technical articles & knowledge sharing  
+🔗 https://hashnode.com/@DevDivyansh28
 ---
 
 ⭐ If you find this journey interesting, feel free to star the repo!
