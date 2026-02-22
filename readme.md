@@ -96,18 +96,17 @@ Stay tuned as I continue building and learning!
 
 ---
 
-## 🌐 Connect With Me
-
 I regularly share my development journey, learning insights, and technical content across platforms:
 
-🐦 **Follow me on X (Twitter)** for dev updates & thoughts  
+Follow me on X (Twitter) for dev updates and thoughts:  
 https://x.com/devDivyansh_28
 
-💼 **Connect on LinkedIn** for professional updates & networking  
+Connect on LinkedIn for professional updates and networking:  
 https://linkedin.com/in/devdivyansh28
 
-**Read my articles on Hashnode** where I write about development & tech  
+Read my articles on Hashnode where I write about development and tech:  
 https://hashnode.com/@DevDivyansh28
+
 ---
 
 ⭐ If you find this journey interesting, feel free to star the repo!
