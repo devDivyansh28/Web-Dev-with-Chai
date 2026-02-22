@@ -106,7 +106,7 @@ https://x.com/devDivyansh_28
 💼 **Connect on LinkedIn** for professional updates & networking  
 https://linkedin.com/in/devdivyansh28
 
-✍️ **Read my articles on Hashnode** where I write about development & tech  
+**Read my articles on Hashnode** where I write about development & tech  
 https://hashnode.com/@DevDivyansh28
 ---
 
