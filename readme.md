@@ -96,18 +96,18 @@ Stay tuned as I continue building and learning! ✨
 
 ---
 
-## 🤝 Connect With Me
+## 🌐 Connect With Me
 
-I regularly share my learning, projects, and insights on:
+I regularly share my development journey, learning insights, and technical content across platforms:
 
-🐦 **X (Twitter)** – Development updates & content  
-🔗 https://x.com/devDivyansh_28
+🐦 **Follow me on X (Twitter)** for dev updates & thoughts  
+[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/devDivyansh_28)
 
-💼 **LinkedIn** – Professional journey & networking  
-🔗 https://linkedin.com/in/devdivyansh28
+💼 **Connect on LinkedIn** for professional updates & networking  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/devdivyansh28)
 
-✍️ **Hashnode** – Technical articles & knowledge sharing  
-🔗 https://hashnode.com/@DevDivyansh28
+✍️ **Read my articles on Hashnode** where I write about development & tech  
+[![Hashnode](https://img.shields.io/badge/Hashnode-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://hashnode.com/@DevDivyansh28)
 ---
 
 ⭐ If you find this journey interesting, feel free to star the repo!
