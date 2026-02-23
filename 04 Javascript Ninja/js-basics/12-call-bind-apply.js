@@ -6,6 +6,7 @@
 function cookDish(ingredient, style) {
   return `${this.name} prepares ${ingredient} in ${style} style !`;
 }
+
 console.log(cookDish());
 
 const sharmaKitchen = { name: "Sharma jis Kitchen" };
@@ -15,7 +16,7 @@ console.log(cookDish.call(sharmaKitchen, "Paneer and spices", "Muglai"));
 
 const guptaOrder = ["Chole kulche", "Punjabi Dhaba"];
 
-console.log(cookDish.apply(guptaKitchen, guptaOrder));
+console.log(cookDish.apply(guptaKitchen, guptaOrder));  
 
 const bills = [100, 30, 45, 50];
 
