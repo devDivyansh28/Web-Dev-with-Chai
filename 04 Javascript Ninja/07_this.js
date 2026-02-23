@@ -182,6 +182,9 @@ const thisInArrow ={
     role : "sde1",
     job : () =>{
         console.log(this);  // It will refer to empty object unless it get inherited in any regular functions It will not lost it's identity if get detached...
+        const job5 = ()=>{console.log(this);}
+        job5();
+            
     }
     ,
     job2(){
@@ -206,6 +209,8 @@ const thisInArrow ={
 // detach1();
 const detach2 = thisInArrow.job2;
 detach2();
+
+// thisInArrow.job();
 
 
 
