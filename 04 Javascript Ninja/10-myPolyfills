@@ -1,0 +1,18 @@
+console.log("********My Polyfilss **********");
+
+
+console.log("*******Implementation of My Own Map ********");
+
+Array.prototype.myMap = function (fn){
+    const MappedArray = [];
+     
+     for(const item of this){  // We can also use loop in place of this
+        MappedArray.push(fn(item));
+     }
+     return MappedArray;
+};
+
+
+const squared = [1,2,3,4,5].myMap((item) => (item*2));
+
+console.log(squared);

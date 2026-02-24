@@ -6,7 +6,7 @@ const prithviraj = {
   },
 };
 
-const raj = Object.create(prithviraj);
+const raj = Object.create(prithviraj); 
 raj.name = "raj";
 raj.generation = "father";
 raj.runBusiness = function () {

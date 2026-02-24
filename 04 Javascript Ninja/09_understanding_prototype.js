@@ -7,6 +7,7 @@ const omkar = {
 };
 
 const rohit = Object.create(omkar); // it assign all properties of object omkar to rohit...we can also override those properties...
+// Means all prototype chain of omkar will also be get copied to rohit object
 
 console.log(omkar);
 console.log(rohit); // Property has assigned to it if you print property it will print those but abhi ye paisa khud ka nhi hai black money hai to show nhi kr skta...but it have money which can be access using object.key or we can also override them
