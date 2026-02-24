@@ -44,10 +44,7 @@ const catalogEntry = {
 
 Object.seal(catalogEntry);
 
-
 const secureArtificats = { name: "Ruby Pendant" };
-
-
 
 Object.defineProperty(secureArtificats, "catelogId", {
   value: "SEC-999",

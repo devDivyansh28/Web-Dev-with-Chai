@@ -11,8 +11,6 @@ function ranveerWithNoScript() {
 }
 console.log(ranveerWithNoScript());
 
-
-
 const bollywoodFilm = {
   name: "Bajirao Mastani",
   lead: "Ranveer",
@@ -21,8 +19,6 @@ const bollywoodFilm = {
     return `${this.lead} performs in ${this.name}`;
   },
 };
-
-
 const bollywoodFilm2 = {
   name: "Dhurandhar",
   lead: "Ranveer",

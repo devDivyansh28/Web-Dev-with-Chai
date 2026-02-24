@@ -7,7 +7,6 @@ function TataCar(chassisNumber, modelName) {
   
 }
 
-
 TataCar.prototype.status = function () {
   return `Tata ${this.modelName} #${this.chassisNumber} | Fuel: ${this.fuelLevel}`;
 };

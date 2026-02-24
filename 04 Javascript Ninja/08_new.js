@@ -3,6 +3,7 @@ function SoftwareEngineer(name,exp){
     this.exp = exp
 }
 
+
 const swe1 = new SoftwareEngineer("Piyush",8);
 const swe2 = new SoftwareEngineer("Aakash",5);
 
@@ -18,12 +19,19 @@ console.log(swe1.welcome_message());
 console.log(swe2.welcome_message());
 
 
-function joinEmpoyee(id,role){
+// This is also another method and we call it factory methods and for it new each instance will have it's own memory
+function joinEmpoyee(name,role){
     return {
-        id,
+        name,
         role,
         welcome_message(){
             return `${this.name} , Welcome to Your Dream Company...`;
         },
     };
 }
+
+const joinEmp1 = joinEmpoyee("Ritesh","full_stack");
+const joinEmp2 = joinEmpoyee("Ankit","Principal_engineer");
+
+console.log(joinEmp1.welcome_message());
+console.log(joinEmp2.welcome_message());
