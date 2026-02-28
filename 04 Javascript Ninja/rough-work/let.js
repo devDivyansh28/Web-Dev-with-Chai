@@ -9,9 +9,9 @@
 // let letVar = 3; // End of TDZ (for letVar)
 // func(); // IF we run fun() here then execution is outside the TDZ so it will work but execution in TDZ will not work...
 
-function foo(a) {
-  let a = 1; // SyntaxError: Identifier 'a' has already been declared it will give syntax error
-}
+// function foo(a) {
+//   let a = 1; // SyntaxError: Identifier 'a' has already been declared it will give syntax error
+// }
 
 
 // function foo() {
@@ -29,10 +29,19 @@ function foo(a) {
 // console.log(x);
 // foo();
 
-var x = 5;
+// var x = 5;
 
-if(x==5){
-  let x = 3;
-  console.log(x);
+// if(x==5){
+//   let x = 3;
+//   console.log(x);
+// }
+
+function test() {
+  var foo = 33;
+  if (foo) {
+    foo = foo + 55;
+    console.log(foo); // 88
+  }
 }
 
+test();
