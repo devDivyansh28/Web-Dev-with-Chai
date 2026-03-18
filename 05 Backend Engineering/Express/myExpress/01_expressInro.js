@@ -175,10 +175,12 @@ function block_2_response(){
             }
 
 
-            server.close(()=>{
-                console.log("Block 2 executed");
-                resolve()
-            })
+            // server.close(()=>{
+            //     console.log("Block 2 executed");
+            //     resolve()
+            // })
+
+            resolve()
         })
 
 
@@ -188,10 +190,11 @@ function block_2_response(){
 async function main(){
     await block1_basicServer()
     await block_2_response()
-    process.exit() // It will forcefully close the server...
+    // process.exit() // It will forcefully close the server...
 }
 
 main()
+
 
 
 
