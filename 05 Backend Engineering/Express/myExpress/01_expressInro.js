@@ -2,6 +2,7 @@
 
 const express = require('express') // We can also use import but need to make change in package.json from commonjs -> module
 
+
 function block1_basicServer(){
     return new Promise((resolve)=>{
        const app = express()
@@ -112,17 +113,81 @@ function block_2_response(){
     return new Promise((resolve)=>{
         const app = express()
 
-        // app.use(express.json())
+        app.use(express.json())
 
         app.get('/text',(req,res)=>{
             res.send('Hii Divyansh here')
         })
         
+        app.get('/json',(req,res)=>{
+            res.json({
+                framework : json,
+                version : '4.5.5'
+            })
+        })
+
+        app.get('/not-found',(req,res)=>{
+            res.status(404).json({
+                error: "Page not found"
+            })
+        })
+
+        app.get('/health',(req,res)=>{
+            res.sendStatus(200) // it is used in aws and asg detection
+        })  // or /ping
+
+
+        app.get('/old-menu',(req,res)=>{
+            // add entry in DB to see how many users are also use old route
+            res.redirect(301,'/new-menu')
+        })
+
+        app.get('/xml',(req,res)=>{
+            res.type('application/xml').send('<dish> <name><Biryani></name></dish>')
+        })
+       
+        app.get('/custom-headers',(req,res)=>{
+            res.set('x-powered-by','DevDivyansh')
+            res.set('x-Requested-by','12345');
+            res.json({
+                message : "Custom Headers Set"
+            })
+        })
+
+        app.get('/no-content',(req,res)=>{
+            res.status(204).end()
+        })
+
+        const server = app.listen(0,async () =>{
+            const port = server.address().port;
+            const base = `http://127.0.0.1:${port}`;
+
+            try {
+               
+                const textRes = await fetch(`${base}/text`);
+                console.log(textRes);
+                const textData = await textRes.text()
+                console.log(textData);
+                console.log('GET /text',JSON.stringify(textData))
+                
+            } catch (error) {
+                console.log(error)
+            }
+
+
+            server.close(()=>{
+                console.log("Block 2 executed");
+                resolve()
+            })
+        })
+
+
     })
 }
 
 async function main(){
     await block1_basicServer()
+    await block_2_response()
     process.exit() // It will forcefully close the server...
 }
 
