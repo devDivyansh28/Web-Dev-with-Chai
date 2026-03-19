@@ -75,3 +75,20 @@ li{
 .delete:hover{
     background:#c62828;
 }
+
+.edit {
+    background:#4caf50;
+    border:none;
+    color:white;
+    padding:5px 10px;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.btnDivison {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
