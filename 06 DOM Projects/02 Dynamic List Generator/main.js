@@ -58,7 +58,7 @@ addBtn.addEventListener('click',()=>{
       editData.append(btnDiv);
 
       saveBtn.addEventListener("click", () => {
-        li.innerText = editText.value;
+        span.innerText = editText.value;
         saveBtn.replaceWith(editBtn);
         li.append(btnDiv);
         editData.replaceWith(li);
