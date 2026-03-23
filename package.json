@@ -1,5 +1,14 @@
 {
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "ES module example",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
+    "chaiwalicss": "^2.1.0",
     "express": "^5.2.1"
   }
 }
