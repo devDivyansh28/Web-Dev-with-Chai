@@ -6,7 +6,7 @@ class BaseDto{
 
     static validator(data){
         // Remember that this code is very specific to joi...
-        const {error,value} =this.schema.validate(data,{
+        const {error,value} = this.schema.validate(data,{
             abortEarly:false,
             stripUnknown:true
         })
@@ -16,7 +16,7 @@ class BaseDto{
             return {errors , value : null}
         }
 
-        return {error : null , value}
+        return {errors : null , value}
     }
 }
 

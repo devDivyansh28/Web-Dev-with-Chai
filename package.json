@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "chaiwalicss": "^2.1.0",
+    "crypto": "^1.0.1",
     "express": "^5.2.1"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/divyanshsharma-dev/Web-Dev-with-Chai.git"
