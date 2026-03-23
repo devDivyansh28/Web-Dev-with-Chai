@@ -10,5 +10,17 @@
   "dependencies": {
     "chaiwalicss": "^2.1.0",
     "express": "^5.2.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divyanshsharma-dev/Web-Dev-with-Chai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/divyanshsharma-dev/Web-Dev-with-Chai/issues"
+  },
+  "homepage": "https://github.com/divyanshsharma-dev/Web-Dev-with-Chai#readme"
 }
