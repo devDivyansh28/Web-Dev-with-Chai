@@ -1,4 +1,5 @@
-import crypto from "crypto"
+import crypto from "crypto";
+import jwt from "jsonwebtoken";
 
 
 const generateResetToken = ()=>{
@@ -11,4 +12,33 @@ const generateResetToken = ()=>{
     return {rawToken , hashedToken}
 }
 
-export {generateResetToken}
+
+const generateAccessToken = (payload)=>{
+    return jwt.sign(payload, process.env.JWT_ACCESS_SECRET , {
+        expiresIn : process.env.JWT_ACCESS_EXPIRES_IN || "15m"
+    });
+};
+
+
+const verifyAcessToken = (token)=>{
+    return jwt.verify(token,process.env.JWT_ACCESS_SECRET)
+}
+
+
+const generateRefreshToken = (payload)=>{
+    return jwt.sign(payload, process.env.JWT_REFRESH_SECRET , {
+        expiresIn : process.env.JWT_REFRESH_EXPIRES_IN || "15m"
+    });
+};
+
+
+const verifyRefreshToken = (token)=>{
+    return jwt.verify(token,process.env.JWT_VERIFY_SECRET)
+}
+
+const hashToken = (token)=>{
+    crypto.createHash("sha256").update(token).digest("hex")
+}
+
+
+export {generateResetToken ,generateAccessToken , generateRefreshToken , verifyAcessToken , verifyRefreshToken , hashToken}
