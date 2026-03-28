@@ -33,7 +33,10 @@ const login = async ({email,password})=>{
     const user = await User.findOne({email}).select('+password')
     if(!user) throw ApiError.unauthorized("Invalid Email and Password")
     
-    //Somehow we will check...
+    const isMatch = await user.comparePassword(password);
+    if(!isMatch) throw ApiError.unauthorized("Invalid Email or password");
+
+
     if(!user.isVerified) throw ApiError.forbidden("Please Verify your email before login")
 
     const accessToken = generateAccessToken({id: user._id , role : user.role});
