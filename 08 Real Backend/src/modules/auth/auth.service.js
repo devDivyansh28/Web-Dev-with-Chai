@@ -70,7 +70,7 @@ const refresh = async (token)=>{
       return {accessToken}
 }
 
-const logout = async (userid)=>{
+const logout = async (userId)=>{
     // const user = await user.findById(userid);
     // if(!user) throw ApiError.unauthorized("No user found")
     // user.refreshToken = undefined;
@@ -92,6 +92,12 @@ const forgotPassword = async (email)=>{
     await user.save();
 
     // TODO : mail bhejna Nhi aata
+}
+
+const getMe = async (userID)=> {
+   const user = await User.findById(userId);
+   if(!user) throw ApiError.notfound("User not found");
+   return user;
 }
 
 export {register , login , refresh , logout , forgotPassword}
