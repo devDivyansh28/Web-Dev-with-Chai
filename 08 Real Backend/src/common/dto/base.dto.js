@@ -1,10 +1,10 @@
 import Joi from "joi";
 
-class BaseDto{
+class BaseDto {
     
     static schema = Joi.object({})
 
-    static validator(data){
+    static validate(data){
         // Remember that this code is very specific to joi...
         const {error,value} = this.schema.validate(data,{
             abortEarly:false,

@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 
-const connectDB = async ()=>{
+const connectDB = async ()  =>{
     //  ****Rembember this important note : 
     //  ->  Data base connection fail hotey HTMLHeadingElement
     //  ->  Database are always in another continent iska mtlb 
