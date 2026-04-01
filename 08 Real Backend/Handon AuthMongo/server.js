@@ -5,7 +5,7 @@ import connectDB from "./src/common/config/connectDB.js";
 const PORT = process.env.PORT || 4000;
 
 const startServer = async ()=>{
-    await connectDB
+    await connectDB()
 
     app.listen(PORT,()=>{
         console.log(`Server is Running on PORT ${PORT} in ${process.env.NODE_ENV} mode `)

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const connectDB = ()=>{
-    const conn = mongoose.connect(process.env.MONGO_URI)
+    const conn = mongoose.connect(process.env.MONGODB_URI)
 
     console.log("Data Base connected Sucessfully...")
 }

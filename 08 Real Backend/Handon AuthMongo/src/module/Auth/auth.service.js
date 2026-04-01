@@ -31,3 +31,5 @@ const register = async ({name,email,password,role})=>{
     delete userObj.verificationToken;
     return userObj;
 }
+
+export {register}
