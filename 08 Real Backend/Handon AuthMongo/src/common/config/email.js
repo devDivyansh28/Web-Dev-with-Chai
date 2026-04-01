@@ -9,6 +9,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+const sendEmail = async (to, subject, html) => {
+  await transporter.sendMail({
+    from: `"${process.env.SMTP_FROM_NAME}" <${process.env.SMTP_FROM_EMAIL}>`,
+    to,
+    subject,
+    html,
+  });
+};
+
+
 const sendVerificationEmail = async (email, token) => {
   const url = `${process.env.CLIENT_URL}/verify-email/${token}`;
   await sendEmail(

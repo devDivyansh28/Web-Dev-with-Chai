@@ -1,5 +1,6 @@
 import * as authservice from "./auth.service.js"
 import ApiResponse from "../../common/utils/api.response.js"
+import cookie from "cookie"
 
 const register = async (req,res)=>{
     const user = await authservice.register(req.body);
@@ -10,4 +11,18 @@ const register = async (req,res)=>{
     )
 }
 
-export {register}
+const login = async (req,res)=>{
+    const {user,acccesToken,refreshToken} = await authservice.login(req.body);
+
+    res.cookie("refreshToken",refreshToken,{
+        httpOnly : true,
+        secure: process.env.NODE_ENV==="production",
+        sameSite : "strict",
+        maxAge : 7*24*60*60*1000
+    })
+
+    ApiResponse.ok(res,"Login successfulll",{user,acccesToken})
+    
+}
+
+export {register,login}

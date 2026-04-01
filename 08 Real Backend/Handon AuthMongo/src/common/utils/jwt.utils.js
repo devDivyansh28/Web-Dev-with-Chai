@@ -9,4 +9,27 @@ const generateVerificationToken = ()=>{
     return {rawToken , hashToken};
 }
 
-export {generateVerificationToken};
+const generateAccessToken = (payload)=>{
+    return jwt.sign(payload,process.env.JWT_ACCESS_SECRET,{
+        expiresIn : process.env.JWT_ACCESS_EXPIRES_IN || "15m"
+    })
+}
+const generateRefreshToken = (payload)=>{
+    return jwt.sign(payload,process.env.JWT_REFRESH_SECRET,{
+        expiresIn : process.env.JWT_ACCESS_REFRESH_IN || "7d"
+    })
+}
+
+const verifyRefreshToken = (token) => {
+  return jwt.verify(token, process.env.JWT_REFRESH_SECRET);
+};
+
+const verifyAccessToken = (token) => {
+  return jwt.verify(token, process.env.JWT_ACCESS_SECRET);
+};
+
+const createHash = (token)=>{
+    return crypto.createHash("sha256").update(token).digest("hex")
+}
+
+export {generateVerificationToken,generateRefreshToken,generateAccessToken,verifyAccessToken,verifyRefreshToken,createHash};

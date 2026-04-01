@@ -1,7 +1,8 @@
 import User from "./auth.model.js"
 import ApiError from "../../common/utils/api.error.js"
-import { generateVerificationToken } from "../../common/utils/jwt.utils.js"
+import { generateVerificationToken ,generateAccessToken,generateRefreshToken , createHash} from "../../common/utils/jwt.utils.js"
 import { sendVerificationEmail } from "../../common/config/email.js"
+
 
 
 const register = async ({name,email,password,role})=>{
@@ -30,6 +31,33 @@ const register = async ({name,email,password,role})=>{
     delete userObj.password;
     delete userObj.verificationToken;
     return userObj;
+} 
+
+const login = async({email,password})=>{
+    const user = await User.findOne({email}).select("+password");
+    if(!user) throw ApiError.unauthorized("Invalid Email or password")
+    
+    const isMatch = await user.comparePassword(password);
+    if(!isMatch) throw ApiError.unauthorized("Invalid Email or password")
+
+    if(!user.isVerified){
+        throw ApiError.forbidden("Please verify your email before logging in")
+    }
+    
+    const accessToken = generateAccessToken({id:user._id,role:user.role});
+    const refreshToken = generateRefreshToken({id:user._id})
+    
+
+    user.refreshToken = createHash(refreshToken);
+
+    await user.save({validateBeforeSave:false});
+
+    const userObj = user.toObject();
+    delete userObj.password;
+    delete userObj.refreshToken;
+    
+    return {user:userObj , accessToken , refreshToken};
+
 }
 
-export {register}
+export {register , login}
