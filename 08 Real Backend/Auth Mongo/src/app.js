@@ -1,4 +1,4 @@
-import cookieParser from "cookie-parser"
+// import cookieParser from "cookie-parser"
 import express from "express"
 const app = express() // This file is important if in future we want to shift from express to fastify,bun,elysia,hono
 
@@ -7,7 +7,7 @@ import ApiError from "./common/utils/api_error.js"
 
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
-app.use(cookieParser())
+// app.use(cookieParser())
 app.use("/api/auth",authRoute)
 
 app.all("{*path}",(req,res)=>{
