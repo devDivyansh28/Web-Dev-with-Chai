@@ -23,4 +23,6 @@ router.post("forgot-password",validate(ForgotPasswordDto),controller.forgotPassw
 
 router.post("reset-password",validate(ResetPasswordDto),controller.resetPassword)
 
+router.get("/me", authenticate, controller.getMe);
+
 export default router;

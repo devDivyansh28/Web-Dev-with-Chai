@@ -52,4 +52,9 @@ const resetPassword  = async (req,res)=>{
     ApiResponse.ok(res,"Password reset Successfull");
 }
 
-export {register,login,refresh,logout , verifyEmail , forgotPassword,resetPassword}
+const getMe = async (req,res)=>{
+    const user = await authservice.getMe(req.user.id);
+    ApiResponse.ok(res,"User Profile",user)
+}
+
+export {register,login,refresh,logout , verifyEmail , forgotPassword,resetPassword,getMe}

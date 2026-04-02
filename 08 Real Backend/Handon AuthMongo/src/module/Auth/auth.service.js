@@ -136,4 +136,9 @@ const resetPassword = async(token,newPassword)=>{
     await user.save();
 }
 
-export {register , login , refresh,logout , verifyEmail , forgotPassword , resetPassword}
+const getMe = async (userId) => {
+  const user = await User.findById(userId);
+  if (!user) throw ApiError.notFound("User not found");
+  return user;
+};
+export {register , login , refresh,logout , verifyEmail , forgotPassword , resetPassword,getMe}
