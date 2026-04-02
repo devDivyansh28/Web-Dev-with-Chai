@@ -1,6 +1,6 @@
 import User from "./auth.model.js"
 import ApiError from "../../common/utils/api.error.js"
-import { generateVerificationToken ,generateAccessToken,generateRefreshToken , createHash} from "../../common/utils/jwt.utils.js"
+import { generateVerificationToken ,generateAccessToken,generateRefreshToken , createHash , verifyRefreshToken} from "../../common/utils/jwt.utils.js"
 import { sendVerificationEmail } from "../../common/config/email.js"
 
 
@@ -60,4 +60,22 @@ const login = async({email,password})=>{
 
 }
 
-export {register , login}
+const refresh = async (token)=>{
+    if(!token) throw ApiError.unauthorized("Refresh Token Missing");
+
+   const decoded = verifyRefreshToken(token)
+
+   const user = await User.findById(decoded.id).select("+refreshToken");
+
+   if(!user) throw ApiError.unauthorized("User No Longer Exists")
+
+    if(user.refreshToken!==hashToken(token)){
+        throw ApiError.unauthorized("Invalid Refresh Token Please Login Again...")
+    }
+
+    const accessToken = generateAccessToken({id:user._id,role:user.role});
+
+    return {accessToken};
+}
+
+export {register , login , refresh}

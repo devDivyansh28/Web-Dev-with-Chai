@@ -25,4 +25,10 @@ const login = async (req,res)=>{
     
 }
 
-export {register,login}
+const refresh = async (req,res)=>{
+    const token = req.cookies?.refreshToken;
+    const accessToken = await authservice.refresh(token);
+    ApiResponse.ok(res,"Token Refreshed",{accessToken});
+}
+
+export {register,login,refresh}
