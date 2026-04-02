@@ -41,4 +41,15 @@ const verifyEmail = async (req,res)=>{
     await authservice.verifyEmail(req.params.token);
     ApiResponse.ok(res,"Email Verified Successfully")
 }
-export {register,login,refresh,logout , verifyEmail}
+
+const forgotPassword = async (req,res)=>{
+    await authservice.forgotPassword(req.body.email);
+    ApiResponse.ok(res,"Password Reset Email Sent")
+}
+
+const resetPassword  = async (req,res)=>{
+    await authservice.resetPassword(req.params.token,req.body.password);
+    ApiResponse.ok(res,"Password reset Successfull");
+}
+
+export {register,login,refresh,logout , verifyEmail , forgotPassword,resetPassword}

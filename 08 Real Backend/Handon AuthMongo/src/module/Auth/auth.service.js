@@ -1,7 +1,7 @@
 import User from "./auth.model.js"
 import ApiError from "../../common/utils/api.error.js"
 import { generateVerificationToken ,generateAccessToken,generateRefreshToken , createHash , verifyRefreshToken} from "../../common/utils/jwt.utils.js"
-import { sendVerificationEmail } from "../../common/config/email.js"
+import { sendVerificationEmail , sendResetPasswordEmail } from "../../common/config/email.js"
 
 
 
@@ -104,4 +104,36 @@ const verifyEmail = async (token)=>{
     return user;
 }
 
-export {register , login , refresh,logout , verifyEmail}
+const forgotPassword = async (email)=>{
+    const user = await User.findOne({email});
+    if(!user) throw ApiError.notfound("No Account with that Email");
+    const {rawToken,hashToken} = generateVerificationToken()
+
+    user.resetPasswordToken = hashToken;
+    user.resetPasswordExpires = Date.now() + 15*60*1000;
+    await user.save();
+
+    try {
+        await sendResetPasswordEmail(email,rawToken);
+    } catch (error) {
+        console.error("Failed to send reset Email : ",error.message)
+    }
+}
+
+
+const resetPassword = async(token,newPassword)=>{
+    const hashedToken = hashedToken(token);
+    const user = await User.findOne({
+        resetPasswordToken:hashedToken,
+        resetPasswordExpires:{$gt:Date.now()},
+    }).select("+resetPasswordToken +resetPasswordExpires");
+
+    if(!user) throw ApiError.badRequest("invalid or expired resete Token");
+
+    user.password = newPassword;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpires = undefined;
+    await user.save();
+}
+
+export {register , login , refresh,logout , verifyEmail , forgotPassword , resetPassword}
