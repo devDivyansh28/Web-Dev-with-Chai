@@ -13,4 +13,6 @@ router.post("/login",validate(LoginDto),controller.login)
 
 router.post("/refresh",authenticate,controller.refresh)
 
+router.post("/logout",authenticate,controller.logout)
+
 export default router;

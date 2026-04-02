@@ -78,4 +78,9 @@ const refresh = async (token)=>{
     return {accessToken};
 }
 
-export {register , login , refresh}
+const logout = async (userId)=>{
+    // Clear stored refresh token so that it can't be reused
+    await User.findByIdAndUpdate(userId,{refreshToken : null});
+}
+
+export {register , login , refresh,logout}

@@ -31,4 +31,10 @@ const refresh = async (req,res)=>{
     ApiResponse.ok(res,"Token Refreshed",{accessToken});
 }
 
-export {register,login,refresh}
+const logout = async (req,res)=>{
+    await authservice.logout(req.user.id);
+    res.clearCookie("refreshToken");
+    ApiResponse.ok(res,"LoggedOut succesfully")
+}
+
+export {register,login,refresh,logout}
