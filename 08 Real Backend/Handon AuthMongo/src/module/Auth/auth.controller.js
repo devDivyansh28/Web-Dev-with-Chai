@@ -37,4 +37,8 @@ const logout = async (req,res)=>{
     ApiResponse.ok(res,"LoggedOut succesfully")
 }
 
-export {register,login,refresh,logout}
+const verifyEmail = async (req,res)=>{
+    await authservice.verifyEmail(req.params.token);
+    ApiResponse.ok(res,"Email Verified Successfully")
+}
+export {register,login,refresh,logout , verifyEmail}

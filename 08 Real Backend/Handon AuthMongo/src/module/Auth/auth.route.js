@@ -15,4 +15,6 @@ router.post("/refresh",authenticate,controller.refresh)
 
 router.post("/logout",authenticate,controller.logout)
 
+router.post("/verify-email/:token",controller.verifyEmail);
+
 export default router;

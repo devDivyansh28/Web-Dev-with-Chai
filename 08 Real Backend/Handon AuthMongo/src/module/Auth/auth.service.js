@@ -83,4 +83,25 @@ const logout = async (userId)=>{
     await User.findByIdAndUpdate(userId,{refreshToken : null});
 }
 
-export {register , login , refresh,logout}
+const verifyEmail = async (token)=>{
+    const trimmed = String(token).trim();
+    if(!trimmed){
+        throw ApiError.badRequest("Invalid or expired verification Token");
+    }
+
+    const hashedInput = hashToken(trimmed);
+    let user = await User.findOne({verificationToken:hashedInput}).select("+verificationToken")
+
+    if(!user) user =  await User.findOne({verificationToken:trimmed}).select("+verificationToken")
+
+    if(!user) throw ApiError.badRequest("Invalid or expired verification Token");
+
+    await User.findByIdAndUpdate(user._id, {
+      $set: { isVerified: true },
+      $unset: { verificationToken: 1 },
+    });
+
+    return user;
+}
+
+export {register , login , refresh,logout , verifyEmail}
