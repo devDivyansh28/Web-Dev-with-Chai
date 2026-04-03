@@ -13,7 +13,8 @@
     "chaiwalicss": "^2.1.0",
     "cookie": "^1.1.1",
     "crypto": "^1.0.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "pnpm": "^10.33.0"
   },
   "repository": {
     "type": "git",
