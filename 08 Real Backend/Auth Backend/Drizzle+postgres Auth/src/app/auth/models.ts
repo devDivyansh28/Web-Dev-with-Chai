@@ -6,3 +6,8 @@ export const signupPayloadModel = z.object({
     email : z.email(),
     password : z.string().min(6)
 })
+
+export const signinPayModel = z.object({
+    email : z.email(),
+    password : z.string().min(6)
+})

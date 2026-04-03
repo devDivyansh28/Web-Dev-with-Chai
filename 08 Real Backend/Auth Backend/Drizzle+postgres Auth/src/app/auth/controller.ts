@@ -1,9 +1,10 @@
 import type {Request , Response} from 'express';
-import { signupPayloadModel } from './models.js';
+import { signupPayloadModel , signinPayModel} from './models.js';
 import {db} from '../../db/index.js'
 import {usersTable} from '../../db/schema.js'
 import {eq} from "drizzle-orm"
 import { randomBytes , createHmac } from 'node:crypto';
+import { error } from 'node:console';
 
 class AuthenticationController {
     public async handleSignup(req: Request , res : Response){
@@ -30,6 +31,30 @@ class AuthenticationController {
 
         return res.status(201).json({message : 'user has been created successfully' , data : {id: result?.id}})
 
+    }
+
+    public async handleSignin(req : Request , res : Response){
+        const verifydata = await signinPayModel.safeParseAsync(req.body);
+        
+        if(verifydata.error){
+            return res.status(400).json({message : "Body Validation Failed" , error : verifydata.error})
+        }
+
+        const {email, password} = verifydata.data;
+
+        const [user] = await db.select().from(usersTable).where(eq(usersTable.email,email));
+
+        if(!user) return res.status(400).json({message :`User with email ${email} does not exists`})
+
+        const salt = user.salt!
+
+        const hash = createHmac('sha256',salt).update(password).digest('hex')
+
+        if(user.password !== hash) return res.status(400).json({message : `email or password is incorrect`})
+
+        // TODO : Token Banao
+
+        return res.json({message : 'Signin Success' , data : {token : 1}})
     }
     
 }
