@@ -1,0 +1,20 @@
+services:
+  postgresdb:
+    image: postgres:17
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: process.env.POSTGRES_USER
+      POSTGRES_PASSWORD: process.env.POSTGRES_PASSWORD
+      POSTGRES_DB: process.env.POSTGRES_DB
+    volumes:
+      - 'postgres_data:/var/lib/postgresql/data'
+    
+
+  app:
+    image: node:18
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:
