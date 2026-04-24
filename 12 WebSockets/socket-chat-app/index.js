@@ -5,11 +5,12 @@ import express from 'express';
 
 async function main(){
     const app = express();
+
     app.use(express.static(path.resolve('./public')));
 
     const server = http.createServer(app);
 
-    const io = new Server();
+    const io = new Server({connectionStateRecovery : {}});
     io.attach(server);
 
     io.on('connection',(socket)=>{
