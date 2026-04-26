@@ -72,6 +72,11 @@
             input.checked = checked;
         }
      })
+     
+     
+    //  socket.on('server:error',(data)=>{
+    //    const errorMessage = data.error;
+    //  })
 
      const container = document.getElementById("container");
      const CHECKBOX_COUNT = 100;
@@ -93,6 +98,7 @@
         console.log("checkbox changed" , {index , checked});
         socket.emit('client:checkbox:change',{index , checked})
          })
+         
         container.appendChild(input);
        })
 
