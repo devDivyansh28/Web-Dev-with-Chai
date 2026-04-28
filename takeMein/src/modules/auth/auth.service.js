@@ -37,6 +37,13 @@ const register = async ({name,email,password,role})=>{
     return userObj
 }
 
+const oidcService = async ()=>{
+    const services = {
+        issuer : "http://localhost:4000"
+    }
+
+    return services;
+}
 // const login = async ({email,password})=>{
 //     // I think first work should be to find in database whether that email exist or not...
 //     const user = await User.findOne({email}).select('+password')
@@ -125,9 +132,8 @@ const register = async ({name,email,password,role})=>{
 // };
 
 
-export {register 
+export {register , oidcService 
     // , login , refresh , logout , forgotPassword , getMe , verifyEmail
-
 }
 
 //Need some more things to learn in this...

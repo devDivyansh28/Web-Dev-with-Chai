@@ -21,4 +21,10 @@ router.post("/register", validate(RegisterDto), controller.register);
 // router.post("/getMe",authenticate,controller.getMe)
 // // router.get("/verify-email/:token",controller.getMe);
 
+router.get('/health',(req,res)=>{
+    return res.status(200).json({health : "ok"})
+})
+
+router.get('/.well-known/openid-configuration', controller.oidc)
+
 export default router;

@@ -14,6 +14,13 @@ const register = async (req, res) => {
   );
 };
 
+
+const oidc = async (req,res)=>{
+  const response = await authService.oidcService();
+
+  return res.status(200).json(response);
+}
+
 // const login = async (req,res)=>{
 //     const {user , accessToken , refreshToken} = await authService.login(req.body)
 //     res.cookie("refreshToken",refreshToken,{
@@ -36,4 +43,4 @@ const register = async (req, res) => {
 //     ApiResponse.ok(res,"User Profile",user);
 // }
 
-export { register };
+export { register , oidc };
