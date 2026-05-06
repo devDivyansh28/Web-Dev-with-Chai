@@ -1,9 +1,7 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
-
 import "./App.css";
-
 import AvatarCard from "./components/AvatarCard.jsx";
 const avatars = [
   {
@@ -48,9 +46,7 @@ function App() {
         <h1>this is inside Shell</h1>
         <p>this is also inside shell</p>
       </Shell>
-      
       <h1>hello from Rachit</h1>
-
       <section>
         {avatars.map((avatar) => (
           <AvatarCard
@@ -60,7 +56,6 @@ function App() {
           />
         ))}
       </section>
-
     </>
   );
 }
