@@ -29,9 +29,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <div>
-         <h1>Divyansh Bhai!!!!!!!!!!!!</h1>
+   <h1>This Text is from Layout.tsx We are Learning Next.js Fundamentally here...All the best for your journey...</h1>
         {children}
-         <h1>Divyansh Bhai!!!!!!!!!!!!</h1>
+     
         </div>
         </body>
     </html>
